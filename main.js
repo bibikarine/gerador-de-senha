@@ -2,6 +2,7 @@ const numeroSenha = document.querySelector('.parametro-senha__texto');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
 
+
 const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
 const numeros = '0123456789';
@@ -54,7 +55,8 @@ function geraSenha() {
     if (checkbox[3].checked) {
         alfabeto = alfabeto + simbolos;
     }
-    console.log(alfabeto);
+
+console.log(alfabeto);
     let senha = '';
     for (let i = 0; i < tamanhoSenha; i++) {
         let numeroAleatorio = Math.random() * alfabeto.length;
@@ -64,8 +66,16 @@ function geraSenha() {
     campoSenha.value = senha;
     classificaSenha();
 }
-    function classificaSenha(){
-    forcaSenha.classList.remove('fraca','media','forte');
-    forcaSenha.classList.add('forte');
 
+function classificaSenha(){
+    forcaSenha.classList.remove('fraca','media','forte');
+
+    if (tamanhoSenha > 11){
+        forcaSenha.classList.add('forte');
+}
+else if (tamanhoSenha > 5 && tamanhoSenha < 12 ){
+forcaSenha.classList.add('media');
+} else if (tamanhoSenha <= 5){
+forcaSenha.classList.add('forte');
+}
 }
