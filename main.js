@@ -67,7 +67,10 @@ console.log(alfabeto);
     classificaSenha(alfabeto.length;);
 }
 
-function classificaSenha(){
+function classificaSenha(tamanhoAlfabeto){
+    let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
+    console.log(entropia);
+    
     forcaSenha.classList.remove('fraca','media','forte');
     if (tamanhoSenha > 11){
         forcaSenha.classList.add('forte');
@@ -76,6 +79,5 @@ function classificaSenha(){
     } else if (tamanhoSenha <= 5){
         forcaSenha.classList.add('fraca');
     }
-        let entropia = tamanhoSenha * Math.log2(alfabeto.length);
-        console.log(entropia);
+        
 }
