@@ -76,4 +76,5 @@ function classificaSenha(){
     } else if (tamanhoSenha <= 5){
         forcaSenha.classList.add('fraca');
     }
+        let entropia = tamanhoSenha * Math.log2(alfabeto.length);
 }
