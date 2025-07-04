@@ -64,7 +64,7 @@ console.log(alfabeto);
         senha = senha + alfabeto[numeroAleatorio];
     }
     campoSenha.value = senha;
-    classificaSenha();
+    classificaSenha(alfabeto.length;);
 }
 
 function classificaSenha(){
@@ -77,4 +77,5 @@ function classificaSenha(){
         forcaSenha.classList.add('fraca');
     }
         let entropia = tamanhoSenha * Math.log2(alfabeto.length);
+        console.log(entropia);
 }
